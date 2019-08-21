@@ -270,6 +270,11 @@ export default class TestRun extends AsyncEventEmitter {
     }
 
     handlePageError (ctx, err) {
+        console.log('!!! handlePageError');
+        console.log('err =', err);
+        console.log('err.message =', err.message);
+        console.log('err.stack =', err.stack);
+
         if (ctx.req.headers[UNSTABLE_NETWORK_MODE_HEADER]) {
             ctx.closeWithError(500, err.toString());
             return;
@@ -288,6 +293,11 @@ export default class TestRun extends AsyncEventEmitter {
             await fn(this);
         }
         catch (err) {
+            console.log('!!! _executeTestFn');
+            console.log('err =', err);
+            console.log('err.message =', err.message);
+            console.log('err.stack =', err.stack);
+
             let screenshotPath = null;
 
             if (this.opts.takeScreenshotsOnFails)

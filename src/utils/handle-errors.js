@@ -52,8 +52,9 @@ function formatError (ErrorCtor, error) {
 
 function handleUnexpectedError (ErrorCtor, error) {
     console.log('!!! handleUnexpectedError');
-    console.log(error.message);
-    console.log(error.stack);
+    console.log('error =', error);
+    console.log('error.message =', error.message);
+    console.log('error.stack =', error.stack);
 
     try {
         handleError(ErrorCtor, formatError(ErrorCtor, error));

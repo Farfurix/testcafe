@@ -10,6 +10,8 @@ const TestCafe      = lazyRequire('./testcafe');
 const endpointUtils = lazyRequire('endpoint-utils');
 const setupExitHook = lazyRequire('async-exit-hook');
 
+console.log('!log-error-2!');
+
 // Validations
 async function getValidHostname (hostname) {
     if (hostname) {

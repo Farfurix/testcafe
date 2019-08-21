@@ -17,6 +17,11 @@ export default function wrapTestFunction (fn) {
             result = await markeredfn(testRun.controller);
         }
         catch (err) {
+            console.log('!!! wrapTestFunction');
+            console.log('err =', err);
+            console.log('err.message =', err.message);
+            console.log('err.stack =', err.stack);
+
             errList.addError(err);
         }
 

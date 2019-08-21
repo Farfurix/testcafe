@@ -8,7 +8,7 @@ import isCI from 'is-ci';
 // stream, while stdout is used for the report output.
 export default {
     animation:  null,
-    isAnimated: tty.isatty(1) && !isCI,
+    isAnimated: false,
 
     showSpinner () {
         // NOTE: we can use the spinner only if stdout is a TTY and we are not in CI environment (e.g. TravisCI),
